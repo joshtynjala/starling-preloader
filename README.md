@@ -6,7 +6,7 @@ SWFs running in a web browser should have preloaders. How do you create a preloa
 
 2. Use this compiler argument to put a class on frame 2.
 
-    -frame two,com.example.Main
+	-frame two,com.example.Main
 
 3. When the SWF is completely loaded, call `gotoAndStop(2)`.
 
