@@ -1,8 +1,8 @@
 # Preloader for Starling
 
-SWFs running in a web browser should have preloaders. Preloaders allow you to display some kind of graphics while the rest of the SWF file loads so that visitors to your website don't get bored while waiting.
+SWFs running in a web browser should have preloaders. A preloader allows you to quickly display graphics and animation so that visitors to your webpage have something to look at while the rest of the SWF file loads.
 
-How do you create a preloader for a Starling app? It's not really any different than creating a preloader for any other SWF. Here's a summary of how I do it. Take a look at the included source code for complete details.
+How do you create a preloader for a Starling app? It's not really any different than creating a preloader for any other SWF. Here's a summary of how I do it. Be sure to look at the included source code for complete details.
 
 1. Extend `flash.display.MovieClip` when creating the startup class. Call `stop()` in the constructor.
 
@@ -24,7 +24,7 @@ How do you create a preloader for a Starling app? It's not really any different 
 
 6. Call `getDefinitionByName()` again to get a reference to `starling.core.Starling`. Again, do not import this class.
 
-7. Instantiate Starling using the classes returned by `getDefinitionByName()`.
+7. Initialize Starling using the classes returned by `getDefinitionByName()`.
 
 Please see the comments in the example code for more detailed explanations.
 
