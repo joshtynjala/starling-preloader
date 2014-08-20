@@ -20,7 +20,7 @@ package
 	 * rest of your embedded assets to keep the first frame nice and small.</p>
 	 *
 	 * <p>The following compiler argument is required to make this work:</p>
-	 * <pre>-frame=two,org.josht.examples.preloader.StarlingRoot</pre>
+	 * <pre>-frame=two,com.example.StarlingRoot</pre>
 	 *
 	 * <p>Because our StarlingRoot class is a Starling display object, and
 	 * because we don't import starling.core.Starling in this class, the
@@ -78,7 +78,7 @@ package
 			this.gotoAndStop(2);
 
 			//getDefinitionByName() will let us access the classes without importing
-			var RootType:Class = getDefinitionByName("org.josht.examples.preloader.StarlingRoot") as Class;
+			var RootType:Class = getDefinitionByName("com.example.StarlingRoot") as Class;
 			var StarlingType:Class = getDefinitionByName("starling.core.Starling") as Class;
 			this._starling = new StarlingType(RootType, this.stage);
 			this._starling.start();

@@ -1,4 +1,4 @@
-package org.josht.examples.preloader
+package com.example
 {
 	import starling.display.Quad;
 	import starling.display.Sprite;

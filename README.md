@@ -9,7 +9,7 @@ How do you create a preloader for a Starling app? It's not really any different 
 2. Use the following command line argument to compile your Starling root class on frame 2 instead of frame 1. It's the class that you will pass to the Starling constructor. It usually extends `starling.display.Sprite`.
 
 	```
-	-frame two,org.josht.examples.preloader.StarlingRoot
+	-frame two,com.example.StarlingRoot
 	```
 
 3. Wait for the SWF to be completely loaded. Listen for `Event.COMPLETE` on the `loaderInfo` object.
@@ -19,7 +19,7 @@ How do you create a preloader for a Starling app? It's not really any different 
 5. Get a reference to the Starling root class by calling `getDefinitionByName()`. **Do not import this class.** If you import it, it will be compiled on frame 1 instead of frame 2, and then the preloader won't work.
 
 	```as3
-	var RootType:Class = getDefinitionByName("org.josht.examples.preloader.StarlingRoot") as Class;
+	var RootType:Class = getDefinitionByName("com.example.StarlingRoot") as Class;
 	```
 
 6. Call `getDefinitionByName()` again to get a reference to `starling.core.Starling`. Again, do not import this class.
