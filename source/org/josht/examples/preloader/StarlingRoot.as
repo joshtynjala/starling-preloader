@@ -8,9 +8,9 @@ package org.josht.examples.preloader
 	 * The root Starling display object. No special code is required here to
 	 * enable the preloader.
 	 */
-	public class Main extends Sprite
+	public class StarlingRoot extends Sprite
 	{
-		public function Main()
+		public function StarlingRoot()
 		{
 			this.addEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
 		}

@@ -7,7 +7,7 @@ package
 
 	[SWF(width="960",height="640",frameRate="60",backgroundColor="#1a1a1a")]
 	/**
-	 * An example of a document class that displays a preloader for a Starling
+	 * An example of a startup class that displays a preloader for a Starling
 	 * app. Uses the <code>-frame</code> compiler argument to include the root
 	 * Starling display object on the second frame of the SWF rather than on the
 	 * first frame. The first frame loads quickly and can display things on the
@@ -20,11 +20,11 @@ package
 	 * rest of your embedded assets to keep the first frame nice and small.</p>
 	 *
 	 * <p>The following compiler argument is required to make this work:</p>
-	 * <pre>-frame=two,org.josht.examples.preloader.Main</pre>
+	 * <pre>-frame=two,org.josht.examples.preloader.StarlingRoot</pre>
 	 *
-	 * <p>Because our Main class is a Starling display object, and because we
-	 * don't import starling.core.Starling in this class, the Starling Framework
-	 * will also be included on frame 2 instead of frame 1.</p>
+	 * <p>Because our StarlingRoot class is a Starling display object, and
+	 * because we don't import starling.core.Starling in this class, the
+	 * Starling Framework will also be included on frame 2 instead of frame 1.</p>
 	 */
 	public class StarlingPreloaderExample extends MovieClip
 	{
@@ -78,9 +78,9 @@ package
 			this.gotoAndStop(2);
 
 			//getDefinitionByName() will let us access the classes without importing
-			const StarlingType:Class = getDefinitionByName("starling.core.Starling") as Class;
-			const MainType:Class = getDefinitionByName("org.josht.examples.preloader.Main") as Class;
-			this._starling = new StarlingType(MainType, this.stage);
+			var RootType:Class = getDefinitionByName("org.josht.examples.preloader.StarlingRoot") as Class;
+			var StarlingType:Class = getDefinitionByName("starling.core.Starling") as Class;
+			this._starling = new StarlingType(RootType, this.stage);
 			this._starling.start();
 
 			//that's it!
