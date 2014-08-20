@@ -33,14 +33,19 @@ package
 		 */
 		private static const PROGRESS_BAR_HEIGHT:Number = 20;
 
+		/**
+		 * Constructor.
+		 */
 		public function StarlingPreloaderExample()
 		{
 			//the document class must be a MovieClip so that things can go on
 			//the second frame.
 			this.stop();
 
-			//the two most important events for preloading
+			//we listen to ProgressEvent.PROGRESS to update the progress bar.
 			this.loaderInfo.addEventListener(ProgressEvent.PROGRESS, loaderInfo_progressHandler);
+
+			//we listen to Event.COMPLETE to know when the SWF is completely loaded.
 			this.loaderInfo.addEventListener(Event.COMPLETE, loaderInfo_completeHandler);
 		}
 
@@ -54,7 +59,7 @@ package
 		/**
 		 * You'll get occasional progress updates here. event.bytesLoaded / event.bytesTotal
 		 * will give you a value between 0 and 1. Multiply by 100 to get a value
-		 * between 0 and 100.
+		 * between 0 and 100. For the nearest integer, use Math.floor().
 		 */
 		private function loaderInfo_progressHandler(event:ProgressEvent):void
 		{
