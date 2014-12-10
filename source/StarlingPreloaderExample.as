@@ -4,6 +4,8 @@ package
 	import flash.events.Event;
 	import flash.events.ProgressEvent;
 	import flash.utils.getDefinitionByName;
+	//keep your imports to a minimum!
+	//avoid classes with embedded assets, like images or sounds.
 
 	[SWF(width="960",height="640",frameRate="60",backgroundColor="#1a1a1a")]
 	/**
